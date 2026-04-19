@@ -1,0 +1,248 @@
+.header-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 500px;
+  min-height: 400px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative; /* Добавляем relative для дочерних absolute элементов */
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute; /* Оставляем абсолютное позиционирование */
+  bottom: 20px; /* Оставляем расстояние от низа */
+  left: 20px; /* Фиксируем у левого края с отступом 20px */
+  /* Убираем transform и центрирование */
+  z-index: 10; /* Убеждаемся, что контролы поверх других элементов */
+}
+
+.slider-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.slider-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.slider-counter {
+  color: white;
+  font-size: 1rem;
+  padding: 0 5px;
+}
+
+.header-slider__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  color: white;
+}
+
+.header-slider__text {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-slider__text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.header-slider__text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-slider__button {
+  padding: 1rem 2rem;
+  background-color: #5e81f4;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+  font-size: 1.6rem;
+}
+
+.header-slider__button:hover {
+  background-color: #4a6fe0;
+}
+
+.header-slider__media {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-slider__media-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+/* Анимации и остальной код остаются без изменений */
+.slide-enter {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.slide-exit {
+  opacity: 1;
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.header-slider__button-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-slider__promotion-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.header-slider__timer {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.timer__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.timer__countdown {
+  display: flex;
+  gap: 1rem;
+}
+
+.timer__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer__value {
+  font-size: 1.2rem;
+}
+
+.timer__label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.header-slider__promotion-overlay {
+  position: absolute;
+  top: 360px; /* Позиционирование сверху */
+  right: 1500px; /* Позиционирование справа */
+  z-index: 10; /* Уровень наложения */
+}
+
+.header-slider__promotion-image {
+  max-width: 150px; 
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease-in-out;
+}
+
+.header-slider__promotion-image:hover {
+  animation: spin 2s linear infinite, wobble 0.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@media (max-width: 1024px) {
+
+  .header-slider__text h2 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+  }
+
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 450px; /* Отступ сверху */
+    left: 30px; /* Оставляем у левого края */
+    z-index: 10;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 450px; /* Отступ сверху */
+    left: 10px; /* Оставляем у левого края */
+    z-index: 10;
+  }
+
+}
+
+
+@media (max-width: 412px) {
+
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 400px; /* Отступ сверху */
+    left: 225px; /* Оставляем у левого края */
+    z-index: 10;
+  }
+
+}

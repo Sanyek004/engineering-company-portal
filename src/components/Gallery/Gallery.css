@@ -1,0 +1,203 @@
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 100%;
+  height: 80vh; /* Фиксированная высота относительно экрана */
+  min-height: 600px; /* Минимальная высота для маленьких экранов */
+}
+
+.gallery-title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
+  flex: 0 0 auto; /* Фиксированный размер, не растягивается */
+}
+
+.media-container {
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  flex: 1 1 60%; /* Занимает большую часть пространства */
+  max-height: 60%; /* Ограничение максимальной высоты */
+}
+
+.media-item {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-content {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.description-container {
+  text-align: center;
+  width: 100%;
+  flex: 0 0 15%; /* Фиксированная доля высоты */
+  max-height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto; /* Добавляем прокрутку, если контент превышает высоту */
+}
+
+.media-title {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  margin: 0.5rem auto;
+  max-width: 90%;
+  white-space: normal; /* Позволяем перенос на следующую строку */
+  line-height: 1.2; /* Устанавливаем высоту строки для читаемости */
+}
+
+.media-description {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin: 0.5rem auto;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+
+.controls-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  flex: 0 0 10%; /* Фиксированная доля высоты */
+  max-height: 10%;
+  align-items: center;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+/* Анимации */
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 300ms ease-out;
+}
+
+/* Медиа-запросы для планшетов */
+@media (max-width: 768px) {
+  .gallery-container {
+    margin: 1rem auto;
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .media-container {
+    width: 80%;
+  }
+
+  .gallery-title {
+    margin-bottom: 1rem; /* Уменьшен отступ */
+  }
+
+  .description-container {
+    margin-bottom: 0.25rem; /* Минимальный отступ перед кнопками */
+  }
+
+  .media-title {
+    margin: 0.25rem auto; /* Уменьшен отступ */
+    white-space: normal; /* Перенос строк */
+    line-height: 1.3;
+  }
+
+  .media-description {
+    margin: 0.25rem auto; /* Уменьшен отступ */
+    white-space: normal; /* Перенос строк */
+    line-height: 1.3;
+  }
+
+  .controls-container {
+    margin-top: 0.5rem; /* Уменьшен отступ */
+  }
+}
+
+/* Медиа-запросы для смартфонов */
+@media (max-width: 480px) {
+  .gallery-container {
+    margin: 0.5rem auto;
+    height: 45vh;
+    min-height: 400px;
+  }
+
+  .media-container {
+    width: 78%; /* Чуть шире для маленьких экранов */
+  }
+
+  .gallery-title {
+    margin-bottom: 0.5rem; /* Минимальный отступ */
+  }
+
+  .description-container {
+    margin-bottom: 0.1rem; /* Еще меньший отступ перед кнопками */
+  }
+
+  .media-title {
+    margin: 0.2rem auto; /* Минимальный отступ */
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    white-space: normal; /* Перенос строк */
+    line-height: 1.2;
+  }
+
+  .media-description {
+    margin: 0.2rem auto; /* Минимальный отступ */
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    white-space: normal; /* Перенос строк */
+    line-height: 1.2;
+  }
+
+  .controls-container {
+    margin-top: 0.25rem; /* Минимальный отступ */
+    gap: 0.5rem;
+  }
+
+  .nav-button {
+    padding: 0.4rem 0.8rem;
+  }
+}

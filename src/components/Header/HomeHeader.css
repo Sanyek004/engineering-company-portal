@@ -1,0 +1,214 @@
+.header {
+  color: #fff;
+  padding: 1rem;
+  background-color: rgb(27, 34, 45);
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.logo-image {
+  height: 5rem;
+  width: auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Стили гамбургера */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.main-nav {
+  max-width: 60%;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  margin: 0 15px;
+}
+
+.catalog-link {
+  font-size: 17px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.catalog-link:hover {
+  color: #f0f0f0;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.catalog-link.active {
+  color: #f0f0f0;
+  font-weight: bold;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-number {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.email {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header {
+      padding: 0.5rem;
+      position: sticky; /* Закрепляем шапку */
+      top: 0; /* Прикрепляем к верху экрана */
+      z-index: 1000; /* Убеждаемся, что шапка поверх контента */
+      width: 100%; /* Гарантируем, что не выходит за ширину */
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .main-nav {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgb(27, 34, 45);
+      max-width: 100%;
+      z-index: 999; /* Меньше, чем у шапки, но выше контента */
+  }
+
+  .main-nav.open {
+      display: block;
+  }
+
+  .main-nav ul {
+      flex-direction: column;
+      width: 100%;
+      padding: 0.5rem 0;
+  }
+
+  .main-nav li {
+      margin: 0;
+      padding: 10px 15px;
+      text-align: center;
+  }
+
+  .header-top {
+      padding: 0 5px;
+  }
+
+  .contact-info {
+      flex-direction: row;
+      gap: 10px;
+      margin: 5px 0;
+      justify-content: center;
+  }
+
+  .auth-container {
+      margin: 5px 0;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .phone-number {
+      font-size: 0.9rem;
+  }
+
+  .email {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+      height: 3rem;
+  }
+
+  .phone-number {
+      font-size: 0.8rem;
+  }
+
+  .email {
+      font-size: 0.9rem;
+  }
+
+  .catalog-link {
+      font-size: 15px;
+  }
+}

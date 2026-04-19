@@ -1,0 +1,61 @@
+.site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+  
+  main {
+    padding: 2rem 0;
+    background-color: rgb(27, 34, 45);
+    position: relative;
+    flex-grow: 1; /* Добавляем flex-grow */
+}
+  
+h1 {
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    color: #ffffff;
+}
+
+h2 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+p {
+    line-height: 1.6;
+    color: #fff;
+}
+  
+  /* Кнопки (общие стили, которые могут использоваться в разных компонентах) */
+  button,
+  form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  button:hover,
+  form button:hover {
+      background-color: #0056b3;
+  }
+  
+  /* Ссылки (общие стили) */
+  a {
+      color: #4CAF50;
+      text-decoration: none;
+  }
+
+  /* Медиа-запрос */
+  @media (max-width: 768px) {
+      .container {
+          flex-direction: column;
+          text-align: center;
+      }
+  }

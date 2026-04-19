@@ -1,0 +1,221 @@
+.publications-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: #1b222d;
+}
+
+.publications-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #1b222d;
+}
+
+.publications-header h1 {
+  margin: 0;
+}
+
+.publications-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.publications-main {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.publication-item {
+  background-color: #191f29;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+
+.publication-item img,
+.publication-item video {
+  width: 45%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.publication-date {
+  color: #7289da;
+  margin-top: 10px;
+}
+
+.publication-form {
+  background-color: #191f29;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+
+.publication-form input,
+.publication-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  background-color: #1b222d;
+  color: white;
+}
+
+.publication-form button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #7289da;
+  color: white;
+  cursor: pointer;
+}
+
+/* Новые стили */
+.read-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-link:hover {
+  background-color: #0056b3;
+}
+
+.publication-error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.publication-success {
+   color: green;
+  margin-bottom: 10px;
+}
+
+.add-publication-button {
+padding: 10px 15px;
+background-color: #28a745; /* Зеленый цвет */
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+margin-bottom: 10px; /* Отступ от формы/публикаций */
+transition: background-color 0.3s ease;
+}
+
+.add-publication-button:hover {
+  background-color: #218838;
+}
+
+.add-publication-section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pagination ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Центрируем элементы */
+  margin-top: 20px; /* Отступ сверху */
+}
+
+.pagination li {
+  margin: 0 5px; /* Отступы между кнопками */
+}
+
+.pagination li button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px; /* Скругление углов */
+}
+
+.pagination li.active button {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination li button:hover { /* Добавляем стили при наведении */
+  background-color: #ddd;
+}
+
+/* Center the video and adjust its size */
+.publication-detail-video-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%; /* Ensure the container size doesn't exceed the parent's width */
+  margin-bottom: 20px;
+}
+
+.publication-detail-media {
+  width: 100%;    /* Allow video to adjust to container width */
+  height: auto;   /* Maintain aspect ratio */
+  border-radius: 5px;
+  object-fit: contain; /* Ensure the video maintains its aspect ratio */
+}
+
+/* Add additional styling for images */
+.publication-detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.media-container {
+  width: 45%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.publication-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}
+
+.publication-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  object-fit: cover;
+}
+
+.media-error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}

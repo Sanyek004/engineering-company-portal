@@ -1,0 +1,57 @@
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+    max-width: 350px;
+  }
+  
+  .cookie-consent-header {
+    margin: 0;
+    font-size: 16px; /* Чуть больше для заголовка */
+    color: #000; /* Чёрный цвет только для h3 */
+    text-align: center;
+  }
+  
+  .cookie-consent-text {
+    margin: 0;
+    font-size: 14px;
+    color: #000; /* Чёрный цвет только для p */
+    text-align: center;
+  }
+  
+  .cookie-consent-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .cookie-consent-button {
+    background-color: #007bff; /* Синий цвет по умолчанию */
+    color: #fff; /* Белый текст кнопок */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+  }
+  
+  /* Кнопка "Подробнее" */
+  .cookie-consent-button.details:hover {
+    background-color: #ffeb3b; /* Жёлтый при наведении */
+    color: #000; /* Чёрный текст при наведении */
+  }
+  
+  /* Кнопка "ОК" */
+  .cookie-consent-button.accept:hover {
+    background-color: #4caf50; /* Зелёный при наведении */
+  }

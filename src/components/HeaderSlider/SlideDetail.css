@@ -1,0 +1,15 @@
+.slide-detail {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .slide-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-detail p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }

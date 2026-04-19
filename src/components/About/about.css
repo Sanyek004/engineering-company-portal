@@ -1,0 +1,99 @@
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.left-section {
+  width: 50%;
+}
+
+.right-section {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.icon-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-description img {
+  width: 100px; /* Фиксированная ширина иконок для десктопа */
+  height: 100px;
+}
+
+/* Для смартфонов (max-width: 767px) */
+@media (max-width: 767px) {
+  .about-container {
+    flex-direction: column; /* Все элементы по вертикали */
+    padding: 10px;
+  }
+
+  .left-section {
+    width: 100%; /* Полная ширина */
+    margin-bottom: 20px; /* Отступ перед правой секцией */
+  }
+
+  .right-section {
+    width: 100%; /* Полная ширина */
+    grid-template-columns: 1fr; /* Одна колонка вместо двух */
+    gap: 15px;
+  }
+
+  .icon-description img {
+    width: 80px; /* Уменьшаем иконки для смартфонов */
+    height: 80px;
+  }
+
+  .icon-description p {
+    font-size: 0.9rem; /* Уменьшаем текст для читаемости */
+  }
+
+  .left-section h1 {
+    font-size: 1.5rem; /* Уменьшаем заголовок */
+  }
+
+  .left-section p {
+    font-size: 0.9rem; /* Уменьшаем текст описания */
+  }
+}
+
+/* Для планшетов (min-width: 768px и max-width: 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-container {
+    flex-direction: row; /* Горизонтальное расположение сохраняется */
+    padding: 15px;
+  }
+
+  .left-section {
+    width: 40%; /* Чуть меньше ширины для планшетов */
+  }
+
+  .right-section {
+    width: 60%; /* Чуть больше ширины для контента */
+    gap: 15px; /* Уменьшаем отступ между элементами */
+  }
+
+  .icon-description img {
+    width: 90px; /* Промежуточный размер иконок */
+    height: 90px;
+  }
+
+  .icon-description p {
+    font-size: 0.95rem; /* Промежуточный размер текста */
+  }
+
+  .left-section h1 {
+    font-size: 1.8rem; /* Промежуточный размер заголовка */
+  }
+
+  .left-section p {
+    font-size: 0.95rem; /* Промежуточный размер текста */
+  }
+}

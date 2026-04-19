@@ -1,0 +1,48 @@
+/* Стили для модального окна */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #212529; /* Темно-серый фон */
+  padding: 30px;
+  border-radius: 10px;
+  outline: none;
+  color: white; /* Цвет текста белый */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 10px;
+  border: 1px solid #444; /* Темно-серая граница */
+  width: 100%;
+  background-color: #343a40; /* Темно-серый фон инпута */
+  color: white; /* Цвет текста белый */
+  border-radius: 5px;
+}
+
+p {
+  margin-top: 20px;
+}

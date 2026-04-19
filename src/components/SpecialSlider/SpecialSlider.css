@@ -1,0 +1,125 @@
+/* Устанавливаем базовый размер шрифта для корневого элемента (если не задан в другом месте) */
+:root {
+  font-size: 16px; /* Базовый размер шрифта */
+}
+
+.special-slider {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.special-slider__image,
+.special-slider__video {
+  width: 100%;
+  height: auto;
+  max-height: 20rem; /* Высота изображения зависит от размера шрифта */
+  display: block;
+  object-fit: cover;
+}
+
+.special-slider__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem; /* Отступы тоже в rem */
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s ease;
+}
+
+.special-slider__overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.special-slider__overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.special-slider__title {
+  color: white;
+  font-size: 1.5rem; /* Размер шрифта заголовка */
+  margin-bottom: 0.625rem; /* 10px при базовом шрифте 16px */
+  font-weight: bold;
+}
+
+.special-slider__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.special-slider__list li {
+  color: white;
+  font-size: 1rem; /* Размер шрифта списка */
+  margin-bottom: 0.5rem; /* 8px при базовом шрифте 16px */
+  padding-left: 1.25rem; /* 20px при базовом шрифте 16px */
+  position: relative;
+}
+
+.special-slider__list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+}
+
+/* Адаптивность для смартфонов и планшетов */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px; /* Уменьшаем базовый шрифт для планшетов */
+  }
+
+  .special-slider__image,
+  .special-slider__video {
+    max-height: 18rem; /* Уменьшаем высоту пропорционально шрифту */
+  }
+
+  .special-slider__overlay {
+    padding: 0.714rem; /* 10px при базовом шрифте 14px */
+  }
+
+  .special-slider__title {
+    font-size: 1.286rem; /* 18px при базовом шрифте 14px */
+    margin-bottom: 0.571rem; /* 8px при базовом шрифте 14px */
+  }
+
+  .special-slider__list li {
+    font-size: 0.929rem; /* 13px при базовом шрифте 14px */
+    margin-bottom: 0.429rem; /* 6px при базовом шрифте 14px */
+    padding-left: 1.071rem; /* 15px при базовом шрифте 14px */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px; /* Уменьшаем базовый шрифт для смартфонов */
+  }
+
+  .special-slider__image,
+  .special-slider__video {
+    max-height: 15rem; /* Уменьшаем высоту пропорционально шрифту */
+  }
+
+  .special-slider__overlay {
+    padding: 0.833rem; /* 10px при базовом шрифте 12px */
+  }
+
+  .special-slider__title {
+    font-size: 1.167rem; /* 14px при базовом шрифте 12px */
+  }
+
+  .special-slider__list li {
+    font-size: 0.800rem; /* 10px при базовом шрифте 12px */
+    padding-left: 1rem; /* 12px при базовом шрифте 12px */
+  }
+}

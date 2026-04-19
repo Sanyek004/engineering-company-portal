@@ -1,0 +1,38 @@
+.category-selection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.category-selection {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.category-selection h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttons-container .action-button {
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.buttons-container .action-button:hover,
+.buttons-container .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}

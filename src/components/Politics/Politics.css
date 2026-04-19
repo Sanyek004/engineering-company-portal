@@ -1,0 +1,56 @@
+.politics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+
+  .policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .policy-table th,
+  .policy-table td {
+    border: 1px solid white;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .policy-table th {
+    font-weight: bold;
+  }
+  
+  .policy-table ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .policy-table li {
+    margin-bottom: 5px;
+  }

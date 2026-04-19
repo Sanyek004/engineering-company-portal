@@ -1,0 +1,75 @@
+footer {
+  position: relative;
+  z-index: 10; /* Убедись, что z-index выше, чем у .glow */
+  background-color: #222; /* Непрозрачный фон футера */
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px; /* Добавим отступы внутри футера */
+  background-color: #333; /* Темный фон */
+  color: #fff; /* Светлый текст */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px; 
+  color: #fff;
+}
+
+.footer-section a {
+  color: #bbb;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-info {
+  text-align: center;
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-top: 20px;
+}
+
+.contacts-container {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-container h3 {
+  margin-right: 15px;
+  margin-bottom: 10px; 
+}
+
+.contacts-container .social-link {
+  margin-left: 0;
+  display: inline-block;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+}

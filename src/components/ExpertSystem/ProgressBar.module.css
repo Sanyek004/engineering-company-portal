@@ -1,0 +1,97 @@
+/* Используем локальные имена классов */
+.progressBarContainer {
+  position: relative;
+  margin-bottom: 80px;
+  height: 20px;
+}
+
+.progressBarFill {
+    position: absolute;
+    top: 10px; /* Положение полоски сверху-вниз */
+    left: 300px; /* Положение полоски слева-направо */
+    height: 15px; /* Размер полоски-заполнителя */
+    transition: width 800ms ease-in-out;
+    z-index: 0;
+  }
+
+.progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  counter-reset: step;
+  display: flex; /* Добавлено для корректного расположения элементов */
+  justify-content: space-between; /* Добавлено для корректного расположения элементов */
+}
+
+.progressbarItem {
+  list-style-type: none;
+  color: var(--step-color); /* Используем CSS Variable */
+  text-transform: uppercase;
+  font-size: 15px; /* Размер шрифта с нумерацией шагов */
+  width: auto; /* Убрал фиксированную ширину */
+  flex: 1;  /* Равномерно распределяем элементы */
+  position: relative;
+  text-align: center; /* Центрируем текст */
+}
+
+/* Стили для "кубов" */
+.progressbarItem::before {
+  content: counter(step);
+  counter-increment: step;
+  width: var(--step-size); /* Используем CSS Variable */
+  height: var(--step-size); /* Используем CSS Variable */
+  line-height: var(--step-size); /* Центрируем текст по вертикали */
+  display: block;
+  font-size: 20px;
+  color: #333;
+  background: var(--step-color); /* Используем CSS Variable */
+  border-radius: 50%; /* Делаем круглыми */
+  margin: 0 auto 5px auto;
+}
+
+/* Стили для соединителей */
+.progressbarItem::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: var(--step-color); /* Используем CSS Variable */
+  position: absolute;
+  left: -50%;
+  top: calc(var(--step-size) / 2); /* Позиционируем по центру "куба" */
+  z-index: -1;
+}
+
+.progressbarItem:first-child::after {
+  content: none;
+}
+
+/* Активный шаг */
+.progressbarItem.active::before,
+.progressbarItem.active::after {
+  background: var(--active-step-color); /* Используем CSS Variable */
+  color: white;
+}
+
+/* Финальная анимация */
+.gather {
+  justify-content: center; /* Центрируем элементы при собирании */
+}
+
+.gather .progressbarItem {
+    position: relative; /* Добавил для анимации */
+    animation: gatherAnim 800ms forwards;
+}
+
+@keyframes gatherAnim {
+    to {
+        /* Сдвигаем все элементы в центр */
+        transform: translateX(calc(50% - var(--step-size) / 2)); /* Учитываем половину ширины элемента */
+        opacity: 1;
+    }
+}
+
+/* Скрываем прогресс-бар полоску на планшетах и смартфонах */
+@media (max-width: 1280px) {
+  .progressBarFill {
+    display: none;
+  }
+}

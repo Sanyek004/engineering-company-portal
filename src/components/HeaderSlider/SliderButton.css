@@ -1,0 +1,15 @@
+.slider-button-custom {
+    padding: 1rem 2rem;
+    background-color: #5e81f4;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  
+  .slider-button-custom:hover {
+    background-color: #4a6fe0;
+  }

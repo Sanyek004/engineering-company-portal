@@ -1,0 +1,184 @@
+/* basic reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: montserrat, arial, verdana;
+}
+
+/* Форма занимает всю ширину */
+#msform {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  height: 500px; /* Фиксированная высота формы */
+  position: relative;
+  overflow: hidden; /* Скрываем переполнение */
+}
+
+/* Поле с вопросом (fieldset) */
+#msform fieldset {
+  background: white;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 380px; /* Фиксированная высота fieldset (меньше, чем #msform, чтобы уместить прогресс-бар) */
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 130px; /* Позиция под прогресс-баром */
+  overflow-y: auto; /* Прокрутка, если контент превышает высоту */
+}
+
+/* inputs и textarea */
+#msform input,
+#msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
+/* кнопки */
+#msform .action-button {
+  width: auto;
+  min-width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.fs-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* прогрессбар */
+#progressbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  counter-reset: step;
+}
+
+/* варианты ответа */
+.options-container {
+  display: flex;
+  flex-direction: column; /* располагаем элементы вертикально */
+  gap: 15px; /* расстояние между вариантами; можно менять по необходимости */
+  margin-bottom: 20px;
+  align-items: center; /* опционально: центрирует варианты по горизонтали */
+}
+
+.option-label {
+  align-items: center;
+  justify-content: center; /* центрирование содержимого по горизонтали */
+  gap: 5px; /* расстояние между радио-кнопкой и текстом */
+  color: #2C3E50;
+}
+
+/* Если браузер добавляет отступы для input, сбросим их: */
+.option-label input {
+  margin: 0;
+}
+/* Анимации через react-transition-group */
+
+/* Для перехода "вперёд" (Next) */
+.next-enter {
+  transform: translateX(100%); /* Начинаем справа за пределами экрана */
+  opacity: 0;
+  z-index: 2;
+}
+
+.next-enter-active {
+  transform: translateX(0); /* Перемещаем на место */
+  opacity: 1;
+  transition: all 800ms ease-in-out;
+  z-index: 2;
+}
+
+.next-exit {
+  transform: translateX(0); /* Начинаем с текущей позиции */
+  opacity: 1;
+  z-index: 2;
+}
+
+.next-exit-active {
+  transform: translateX(-100%); /* Уводим влево за пределы экрана */
+  opacity: 0;
+  transition: all 800ms ease-in-out;
+  z-index: 2;
+}
+
+/* Для перехода "назад" (Previous) */
+.prev-enter {
+  transform: translateX(-100%); /* Начинаем слева за пределами экрана */
+  opacity: 0;
+  z-index: 2;
+}
+
+.prev-enter-active {
+  transform: translateX(0); /* Перемещаем на место */
+  opacity: 1;
+  transition: all 800ms ease-in-out;
+  z-index: 2;
+}
+
+.prev-exit {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+.prev-exit-active {
+  transform: translateX(100%); /* Уводим вправо за пределы экрана */
+  opacity: 0;
+  transition: all 800ms ease-in-out;
+  z-index: 2;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Занимает высоту родителя */
+  width: 100%; /* Занимает ширину родителя */
+  min-height: 300px; /* Минимальная высота для видимости */
+}

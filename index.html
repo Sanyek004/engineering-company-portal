@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <div class="glow"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    const glow = document.querySelector('.glow');
+    let nextX = 0;
+    let nextY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let timeoutId = null;
+
+    function moveGlow() {
+        // No changes needed here, the CSS transition handles the smoothness
+        glow.style.left = `${nextX}px`;
+        glow.style.top = `${nextY}px`;
+        currentX = nextX;
+        currentY = nextY;
+    }
+
+    document.addEventListener('mousemove', (event) => {
+        nextX = event.clientX;
+        nextY = event.clientY;
+
+        if (timeoutId === null) {
+            currentX = nextX;
+            currentY = nextY;
+            glow.style.left = `${currentX}px`;
+            glow.style.top = `${currentY}px`;
+
+            timeoutId = setTimeout(() => {
+                moveGlow();
+                timeoutId = null;
+            }, 1000);
+
+        } else {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                moveGlow();
+                timeoutId = null;
+            }, 1000);
+        }
+    });
+    
+  </script>
+</body>
+</html>

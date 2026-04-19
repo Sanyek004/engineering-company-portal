@@ -1,0 +1,209 @@
+.water-filtration-system {
+  padding: 20px;
+}
+
+/* Стили для мобильных и планшетов */
+.mobile-tablet-container {
+  display: none; /* Скрываем по умолчанию */
+  text-align: center;
+}
+
+.mobile-tablet-container h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.mobile-tablet-container p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.mobile-tablet-container .image-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+.mobile-tablet-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-tablet-container button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Стили для десктопов */
+.desktop-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-container {
+  flex: 1;
+  gap: 20px;
+}
+
+.text-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.text-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Общие стили для image-container */
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Стили для plus-icon */
+.plus-icon {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.plus-icon:hover {
+  background-color: #007bff;
+}
+
+.plus-icon:hover .anticon {
+  color: #fff;
+}
+
+/* Стили для info-popup */
+.info-popup {
+  position: absolute;
+  background-color: #364558;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: auto;
+  min-width: 200px;
+  max-width: none;
+}
+
+.info-popup-enter {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+}
+
+.info-popup-enter-active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.info-popup-exit {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.info-popup-exit-active {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.info-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #364558 transparent transparent transparent;
+}
+
+.info-popup h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.info-popup p {
+  font-size: 10px;
+  color: #ffffff;
+}
+
+/* Адаптивность для размера шрифта в info-popup */
+@media (min-width: 576px) {
+  .info-popup h3 {
+    font-size: 18px;
+  }
+  
+  .info-popup p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .info-popup h3 {
+    font-size: 20px;
+  }
+  
+  .info-popup p {
+    font-size: 14px;
+  }
+}
+
+/* Медиа-запросы для контейнеров */
+@media (max-width: 991px) {
+  .mobile-tablet-container {
+    display: block;
+  }
+  
+  .desktop-container {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-tablet-container {
+    display: none;
+  }
+  
+  .desktop-container {
+    display: flex;
+  }
+}
