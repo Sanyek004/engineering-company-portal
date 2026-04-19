@@ -39,7 +39,7 @@ A full-stack web application developed for an engineering and water filtration c
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YourUsername/engineering-company-portal.git
+   git clone https://github.com/Sanyek004/engineering-company-portal.git
    cd engineering-company-portal
    ```
 

@@ -39,7 +39,7 @@ Full-stack веб-приложение, разработанное для ком
 
 1. **Клонируйте репозиторий:**
    ```bash
-   git clone https://github.com/Ваш_Ник/engineering-company-portal.git
+   git clone https://github.com/Sanyek004/engineering-company-portal.git
    cd engineering-company-portal
    ```
 
